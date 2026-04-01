@@ -4,7 +4,7 @@ Proyek ini adalah prototipe aplikasi web untuk melakukan pelacakan rekam jejak a
 
 ## Tautan Proyek
 - **Source Code (GitHub):** https://github.com/enno04/pelacakan-alumni
-- **Web Publish (Live Demo):** [MASUKKAN LINK GITHUB PAGES KAMU DI SINI]
+- **Web Publish (Live Demo):** https://enno04.github.io/pelacakan-alumni/
 
 ## Tabel Pengujian Kualitas Aplikasi
 Pengujian dilakukan berdasarkan aspek kualitas perangkat lunak (Kesesuaian Fungsional, Usability, dan Performance).
