@@ -3,7 +3,7 @@
 Proyek ini adalah prototipe aplikasi web untuk melakukan pelacakan rekam jejak alumni melalui sumber publik (seperti LinkedIn, Google Scholar, dll). Sistem ini mengotomatisasi pencarian, ekstraksi sinyal identitas, disambiguasi, dan penentuan status pelacakan.
 
 ## Tautan Proyek
-- **Source Code (GitHub):** [MASUKKAN LINK REPO GITHUB KAMU DI SINI]
+- **Source Code (GitHub):** https://github.com/enno04/pelacakan-alumni
 - **Web Publish (Live Demo):** [MASUKKAN LINK GITHUB PAGES KAMU DI SINI]
 
 ## Tabel Pengujian Kualitas Aplikasi
