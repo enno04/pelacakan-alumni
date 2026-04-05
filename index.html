@@ -5,138 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Pelacakan Alumni</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        
-        #dashboard-section { display: none; }
-        body { background-color: #f8f9fa; }
-        .login-container { max-width: 400px; margin: 100px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .social-link { text-decoration: none; word-break: break-all; font-size: 0.9em; }
-    </style>
 </head>
-<body>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dashboard Pelacakan Alumni</a>
+        </div>
+    </nav>
 
-    <div class="container" id="login-section">
-        <div class="login-container">
-            <h3 class="text-center mb-4">Login Sistem Alumni</h3>
-            <div class="mb-3">
-                <label>Username</label>
-                <input type="text" id="username" class="form-control" placeholder="Masukkan username">
+    <div class="container mt-4">
+        <div class="row mb-3">
+            <div class="col-md-8">
+                <h4>Data Target Pelacakan (Prodi Informatika UMM)</h4>
             </div>
-            <div class="mb-3">
-                <label>Password</label>
-                <input type="password" id="password" class="form-control" placeholder="Masukkan password">
-            </div>
-            <button class="btn btn-primary w-100" onclick="prosesLogin()">Login</button>
-            <div id="login-error" class="text-danger mt-2 text-center" style="display:none;">Username atau Password salah!</div>
-            <div class="text-muted mt-3 text-center" style="font-size: 0.8em;">
-                *Silakan login!
+            <div class="col-md-4 text-end">
+                <button id="btnLacak" class="btn btn-primary" onclick="jalankanPelacakan()">Jalankan Pelacakan (Scheduler)</button>
             </div>
         </div>
-    </div>
 
-    <div id="dashboard-section">
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Dashboard Database Alumni</a>
-                <button class="btn btn-danger btn-sm" onclick="prosesLogout()">Logout</button>
-            </div>
-        </nav>
-
-        <div class="container-fluid mt-4">
-            <div class="d-flex justify-content-between mb-3">
-                <h4>Hasil Pengumpulan Data Alumni</h4>
-                <button class="btn btn-success">Ekspor Data (.xlsx)</button>
-            </div>
-
-            <div class="card" style="overflow-x: auto;">
-                <div class="card-body">
-                    <table class="table table-bordered table-hover text-nowrap align-middle">
-                        <thead class="table-light text-center">
-                            <tr>
-                                <th>Nama Alumni</th>
-                                <th>1. Akun Sosial Media</th>
-                                <th>2. Email</th>
-                                <th>3. No HP</th>
-                                <th>4. Tempat Bekerja</th>
-                                <th>5. Alamat Bekerja</th>
-                                <th>6. Posisi</th>
-                                <th>7. Status Pekerjaan</th>
-                                <th>8. Sosmed Tempat Kerja</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="fw-bold">Ayu Nurlaila Catur Ramadhani</td>
-                                <td>
-                                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ayu-nurlaila-catur-ramadhani-a24084235/" class="social-link" target="_blank">Profil LinkedIn</a><br>
-                                    <strong>IG:</strong> <a href="https://www.instagram.com/rmdhniayu/" class="social-link" target="_blank">@rmdhniayu</a>
-                                </td>
-                                <td>ayu.nurlaila.cr@gmail.com</td>
-                                <td>0812-3344-5566</td>
-                                <td>RSU Universitas Muhammadiyah Malang</td>
-                                <td>Jl. Raya Tlogomas No.45, Malang</td>
-                                <td>Registered Nurse (Perawat)</td>
-                                <td class="text-center"><span class="badge bg-primary">Swasta</span></td>
-                                <td><strong>IG:</strong> @rsu.umm</td>
-                            </tr>
-                            
-                            <tr>
-                                <td class="fw-bold">Brillyan Deavanti</td>
-                                <td>
-                                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/brillyan-deavanti-59b853194/" class="social-link" target="_blank">Profil LinkedIn</a><br>
-                                    <strong>IG:</strong> <a href="https://www.instagram.com/brillyandea/" class="social-link" target="_blank">@brillyandea</a>
-                                </td>
-                                <td>brillyandea@gmail.com</td>
-                                <td>0856-7788-9900</td>
-                                <td>Bank Jatim Cabang Malang</td>
-                                <td>Jl. Jaksa Agung Suprapto No.26, Malang</td>
-                                <td>Customer Service Representative</td>
-                                <td class="text-center"><span class="badge bg-primary">Swasta</span></td>
-                                <td><strong>IG:</strong> @bankjatim</td>
-                            </tr>
-
-                            <tr>
-                                <td class="fw-bold">Annisa Amelya Marganingrum</td>
-                                <td>
-                                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/annisa-amelya-marganingrum-b6b397353/" class="social-link" target="_blank">Profil LinkedIn</a><br>
-                                    <strong>IG:</strong> <a href="https://www.instagram.com/annisa_marganingrum/" class="social-link" target="_blank">@annisa_marganingrum</a>
-                                </td>
-                                <td>annisa.amelya@gmail.com</td>
-                                <td>0899-1122-3344</td>
-                                <td>Apotek K-24 Suhat</td>
-                                <td>Jl. Soekarno Hatta No.9, Malang</td>
-                                <td>Apoteker Penanggung Jawab</td>
-                                <td class="text-center"><span class="badge bg-primary">Swasta</span></td>
-                                <td><strong>IG:</strong> @apotekk24_suhat</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama Lengkap</th>
+                            <th>Tahun Lulus</th>
+                            <th>Status Pelacakan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabelAlumni">
+                        <tr>
+                            <td>ALM-001</td>
+                            <td>Muhammad Rizky</td>
+                            <td>2024</td>
+                            <td><span class="badge bg-secondary" id="status-1">Belum Dilacak</span></td>
+                            <td><button class="btn btn-sm btn-info" disabled>Lihat Jejak</button></td>
+                        </tr>
+                        <tr>
+                            <td>ALM-002</td>
+                            <td>Siti Aminah</td>
+                            <td>2023</td>
+                            <td><span class="badge bg-secondary" id="status-2">Belum Dilacak</span></td>
+                            <td><button class="btn btn-sm btn-info" disabled>Lihat Jejak</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
     <script>
-        
-        function prosesLogin() {
-            const user = document.getElementById('username').value;
-            const pass = document.getElementById('password').value;
+        function jalankanPelacakan() {
+            const btn = document.getElementById('btnLacak');
+            btn.innerHTML = 'Melacak data dari sumber publik...';
+            btn.disabled = true;
 
-            
-            if(user === 'Enno' && pass === 'rekayasakebutuhan') {
-                document.getElementById('login-section').style.display = 'none';
-                document.getElementById('dashboard-section').style.display = 'block';
-                document.getElementById('login-error').style.display = 'none';
-            } else {
-                document.getElementById('login-error').style.display = 'block';
-            }
-        }
+            // Simulasi proses pelacakan 3 detik
+            setTimeout(() => {
+                document.getElementById('status-1').className = 'badge bg-success';
+                document.getElementById('status-1').innerText = 'Teridentifikasi Kuat';
+                
+                document.getElementById('status-2').className = 'badge bg-warning text-dark';
+                document.getElementById('status-2').innerText = 'Perlu Verifikasi Manual';
 
-        function prosesLogout() {
-            document.getElementById('login-section').style.display = 'block';
-            document.getElementById('dashboard-section').style.display = 'none';
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
+                btn.innerHTML = 'Jalankan Pelacakan (Scheduler)';
+                btn.disabled = false;
+                alert('Job Pelacakan Selesai! Disambiguasi dan Verifikasi Silang berhasil dilakukan.');
+            }, 3000);
         }
     </script>
 </body>
